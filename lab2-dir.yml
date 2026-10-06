@@ -1,0 +1,10 @@
+---
+- name: Create directory
+  hosts: servers
+  become: true
+  tasks:
+    - name: ensure directory exists  
+      ansible.builtin.file:
+        path: /otp/ansible_lab
+        state: directory
+        mode: "0777"
