@@ -1,0 +1,10 @@
+---
+ - name: Create an empty file
+   hosts: demo
+   become: true
+   tasks:
+    - name: Ensure file exists
+      ansible.builtin.file:
+        path: /opt/ansible_lab/test.txt
+        state: touch
+        mode: '0644'
