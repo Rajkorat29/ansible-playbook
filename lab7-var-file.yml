@@ -1,0 +1,12 @@
+---
+- name: Write file using variables
+  hosts: servers
+  become: true
+  vars:
+    file_path: /tmp/message.txt
+    file_content: "This server is managed by Ansible."
+  tasks:
+    - name: Create file with content
+      ansible.builtin.copy:
+        content: "{{ file_content }}"
+        dest: "{{ file_path }}"
