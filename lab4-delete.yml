@@ -1,0 +1,9 @@
+---
+- name: Delete directory and contents
+  hosts: servers
+  become: true
+  tasks:
+    - name: Remove lab directory
+      ansible.builtin.file:
+        path: /opt/ansible_lab
+        state: absent
