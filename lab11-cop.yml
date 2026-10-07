@@ -1,0 +1,10 @@
+---
+- name: Copy file to nodes
+  hosts: servers
+  become: true
+  tasks:
+    - name: Copy info.txt
+      ansible.builtin.copy:
+        src: info.txt
+        dest: /tmp/system_info.txt
+        mode: '0644'
