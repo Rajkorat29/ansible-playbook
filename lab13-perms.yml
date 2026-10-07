@@ -1,0 +1,11 @@
+---
+- name: Secure the warning file
+  hosts: servers
+  become: true
+  tasks:
+    - name: Change owner and permissions
+      ansible.builtin.file:
+        path: /etc/motd
+        owner: root
+        group: root
+        mode: '0444'
